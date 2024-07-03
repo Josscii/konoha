@@ -42,6 +42,8 @@ RUN python3.10 -m pip install -U pip
 RUN python3.10 -m pip install -r requirements.lock
 RUN python3.10 -m pip install .
 
+EXPOSE 8000
+
 CMD [ \
       "python3.10", "-m", "uvicorn", \
       "--factory", "konoha.api.server:create_app", \
